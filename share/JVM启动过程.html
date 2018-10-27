@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JVM," />
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="老码农的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="配置JVM装载环境 JVM.dll文件的查找  121、通过JRE的路径找到JVM.cfg2、确定类型找到JVM.dll  JVM.dll文件装载  121、LoadLirbary方法装载JVM.dll动态l连接库2、装载JVM环境完成  JVM参数解析（JavaVMOption）  参数处理   1231、-Xmn:设置新生代的大小NewSize和MaxNewSize2、-Xms:堆内存的初始大">
+<meta name="keywords" content="JVM">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JVM启动过程">
+<meta property="og:url" content="http://yoursite.com/share/JVM启动过程.html">
 <meta property="og:site_name" content="老码农的博客">
+<meta property="og:description" content="配置JVM装载环境 JVM.dll文件的查找  121、通过JRE的路径找到JVM.cfg2、确定类型找到JVM.dll  JVM.dll文件装载  121、LoadLirbary方法装载JVM.dll动态l连接库2、装载JVM环境完成  JVM参数解析（JavaVMOption）  参数处理   1231、-Xmn:设置新生代的大小NewSize和MaxNewSize2、-Xms:堆内存的初始大">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-07T07:58:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="老码农的博客">
+<meta name="twitter:title" content="JVM启动过程">
+<meta name="twitter:description" content="配置JVM装载环境 JVM.dll文件的查找  121、通过JRE的路径找到JVM.cfg2、确定类型找到JVM.dll  JVM.dll文件装载  121、LoadLirbary方法装载JVM.dll动态l连接库2、装载JVM环境完成  JVM参数解析（JavaVMOption）  参数处理   1231、-Xmn:设置新生代的大小NewSize和MaxNewSize2、-Xms:堆内存的初始大">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/share/JVM启动过程.html"/>
 
 
 
 
 
-  <title>老码农的博客</title>
+  <title>JVM启动过程 | 老码农的博客</title>
   
 
 
@@ -140,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,419 +228,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/java/goods.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="老码农">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="老码农的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/java/goods.html" itemprop="url">Java学习资源 -（持续更新...）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-28T17:01:34+08:00">
-                2018-09-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java/" itemprop="url" rel="index">
-                    <span itemprop="name">java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          最高端的JAVA架构师资源（来自龙果学院 价值￥1399元）、JAVA互联网分布式架构（龙果学院 价值￥899元）、Spring Boot(2017年最新 包括源码原理分析) + Spring Cloud微服务架构(2017年最新 价值￥69和￥299两套实战)、大数据开发（龙果学院 价值￥299元
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/java/goods.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/share/JVM面试题.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="老码农">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="老码农的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/share/JVM面试题.html" itemprop="url">JVM面试题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-30T16:55:37+08:00">
-                2018-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          你知道哪些或者你们线上使⽤什么GC策略? 它有什么优势，适⽤于什么 场景？
-参考 触发JVM进行Full GC的情况及应对策略
-
-JAVA类加载器包括⼏种？它们之间的⽗⼦关系是怎么样的？双亲委派机 制是什么意思？有什么好处
-启动Bootstrap类加载、扩展Extension类加载、系统System
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/share/JVM面试题.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/share/JVM基本结构、内存模块.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="老码农">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="老码农的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/share/JVM基本结构、内存模块.html" itemprop="url">JVM基本结构、内存模型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-30T15:52:09+08:00">
-                2018-03-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          JVM基本结构图
-
-PC寄存器
-
-1231、每个线程拥有一个PC寄存器2、在线程创建时创建3、指向下一条指令的地址
-方法区12345671、保存装载的类信息    - 类型的常量池    - 字段、方法信息    - 方法字节码2、通常和永久区绑定在一起``` ###  Java堆
-1、所有线程共享
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/share/JVM基本结构、内存模块.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -666,9 +260,7 @@ PC寄存器
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/share/JVM启动过程.html" itemprop="url">JVM启动过程</a></h1>
+          <h1 class="post-title" itemprop="name headline">JVM启动过程</h1>
         
 
         <div class="post-meta">
@@ -718,32 +310,34 @@ PC寄存器
       
 
       
-        
-          
-          配置JVM装载环境
-JVM.dll文件的查找
-
-121、通过JRE的路径找到JVM.cfg2、确定类型找到JVM.dll
-
-JVM.dll文件装载
-
-121、LoadLirbary方法装载JVM.dll动态l连接库2、装载JVM环境完成
-
-JVM参数解析（JavaVMOption）
-
-参数处理
-
-
-
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/share/JVM启动过程.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <h3 id="配置JVM装载环境"><a href="#配置JVM装载环境" class="headerlink" title="配置JVM装载环境"></a>配置JVM装载环境</h3><ul>
+<li>JVM.dll文件的查找</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1、通过JRE的路径找到JVM.cfg</span><br><span class="line">2、确定类型找到JVM.dll</span><br></pre></td></tr></table></figure>
+<ul>
+<li>JVM.dll文件装载</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1、LoadLirbary方法装载JVM.dll动态l连接库</span><br><span class="line">2、装载JVM环境完成</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>JVM参数解析（JavaVMOption）</p>
+</li>
+<li><p>参数处理</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1、-Xmn:设置新生代的大小NewSize和MaxNewSize</span><br><span class="line">2、-Xms:堆内存的初始大小 InitialHeapSize</span><br><span class="line">3、-Xmx:堆内存的最大值MaxHeapSize</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>参数验证</p>
+</li>
+<li><p>设置线程栈的大小</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">-Xss 线程栈启动参数</span><br><span class="line">每个线程分配的内存大小，默认JDK1.4中是256K，JDK1.5+中是1M</span><br><span class="line"></span><br><span class="line">如果启动参数未设置-Xss，即threadStackSize为0，则调用InvocationFunctions的GetDefaultJavaVMInitArgs方法获取JavaVM的初始化参数，即调用JVM.dll函数JNI_GetDefaultJavaVMInitArgs，定义在share\vm\prims\jni.cpp</span><br><span class="line">ThreadStackSize定义在globals.hpp中，根据当前系统类型，加载对应的配置文件，所以在不同的系统中，ThreadStackSize的默认值也不同。</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>执行main方法</p>
+</li>
+</ul>
+<p>线程栈大小确定后，通过ContinueInNewThread方法创建新线程，并执行JavaMain函数，JavaMain函数的大概流程如下</p>
+<hr>
+<h6 id="1、新建JVM实例"><a href="#1、新建JVM实例" class="headerlink" title="1、新建JVM实例"></a>1、新建JVM实例</h6><h6 id="2、加载主类的class"><a href="#2、加载主类的class" class="headerlink" title="2、加载主类的class"></a>2、加载主类的class</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">分jar和class方式加载</span><br></pre></td></tr></table></figure>
+<h6 id="3、查找main方法"><a href="#3、查找main方法" class="headerlink" title="3、查找main方法"></a>3、查找main方法</h6><h6 id="3、执行main方法"><a href="#3、执行main方法" class="headerlink" title="3、执行main方法"></a>3、执行main方法</h6>
       
     </div>
     
@@ -758,14 +352,36 @@ JVM参数解析（JavaVMOption）
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/JVM/" rel="tag"># JVM</a>
+          
+        </div>
       
 
       
+      
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/share/JVM基本结构、内存模块.html" rel="prev" title="JVM基本结构、内存模型">
+                JVM基本结构、内存模型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </div>
@@ -775,10 +391,11 @@ JVM参数解析（JavaVMOption）
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -786,6 +403,10 @@ JVM参数解析（JavaVMOption）
 
 
           
+
+  
+
+
 
         </div>
         
@@ -806,8 +427,17 @@ JVM参数解析（JavaVMOption）
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -867,6 +497,22 @@ JVM参数解析（JavaVMOption）
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置JVM装载环境"><span class="nav-number">1.</span> <span class="nav-text">配置JVM装载环境</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1、新建JVM实例"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">1、新建JVM实例</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2、加载主类的class"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">2、加载主类的class</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3、查找main方法"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">3、查找main方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3、执行main方法"><span class="nav-number">1.0.0.4.</span> <span class="nav-text">3、执行main方法</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1007,6 +653,10 @@ JVM参数解析（JavaVMOption）
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
